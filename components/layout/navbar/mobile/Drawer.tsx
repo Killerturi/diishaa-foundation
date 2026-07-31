@@ -84,7 +84,7 @@ export default function Drawer({ open, onClose }: DrawerProps) {
                 onClick={onClose}
                 className="rounded-full p-2 hover:bg-gray-100"
               >
-                <X size={22} />
+                <X size={22} className="text-black" />
               </button>
             </div>
 

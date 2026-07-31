@@ -30,7 +30,7 @@ export default function Header() {
             "
             aria-label="Open menu"
           >
-            <Menu size={30} />
+            <Menu size={30} className="text-black" />
           </button>
 
           {/* Center */}
