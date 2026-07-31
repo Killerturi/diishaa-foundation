@@ -10,7 +10,7 @@ export default function QuickActions() {
     absolute
     left-0
     right-0
-    top-[85px]
+    top-[8px]
     z-40
     px-3
   "

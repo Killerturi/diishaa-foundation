@@ -1,9 +1,9 @@
 "use client";
 
-import { LucideIcon } from "lucide-react";
+import { ComponentType } from "react";
 
 interface ImpactCardProps {
-  icon: LucideIcon;
+  icon: ComponentType<any>;
   number: string;
   label: string;
   showDivider?: boolean;
