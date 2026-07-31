@@ -5,7 +5,7 @@ import ImpactCard from "./ImpactCard";
 
 export default function MobileImpact() {
   return (
-    <section className="block px-4 pb-4  lg:hidden">
+    <section className="block mt-2 px-4 pb-4  lg:hidden">
       <div
         className="
           relative
