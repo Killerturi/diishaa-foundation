@@ -16,7 +16,7 @@ export const activities: Activity[] = [
     id: 2,
     title: "Food Distribution",
     slug: "food",
-    cover: "/activities/food/cover.jpg",
+    cover: "/activities/food/cover.JPG",
   },
   {
     id: 3,

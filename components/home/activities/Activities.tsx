@@ -48,10 +48,10 @@ export default function Activities() {
         {/* Heading */}
 
         <div className="flex justify-center items-center mb-10">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             <div className="h-[2px] w-10 bg-orange-400 rounded-full" />
 
-            <h2 className="text-xl md:text-4xl font-bold text-gray-900">
+            <h2 className="text-l md:text-4xl font-bold text-gray-900">
               MAKING A DIFFERENCE
             </h2>
 
