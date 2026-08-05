@@ -1,3 +1,4 @@
+import Activities from "@/components/home/activities/Activities";
 import FocusSection from "@/components/home/focus/FocusSection";
 import Hero from "@/components/home/hero/Hero";
 import ImpactSection from "@/components/home/impact/ImpactSection";
@@ -14,19 +15,8 @@ export default function Home() {
       {/* Our Impact */}
       <ImpactSection />
 
-      {/* About Us */}
-
-      {/* Why Choose Us */}
-
-      {/* Membership */}
-
-      {/* Donation */}
-
-      {/* Testimonials */}
-
-      {/* News */}
-
-      {/* Footer */}
+      <Activities />
+      
     </main>
   );
 }

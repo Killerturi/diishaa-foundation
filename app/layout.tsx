@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/layout/navbar/Navbar";
-import { Playfair_Display, Parisienne, Inter } from "next/font/google";
+// import { Playfair_Display, Parisienne, Inter } from "next/font/google";
+import { Playfair_Display, Sacramento, Inter } from "next/font/google";
 
 const heading = Playfair_Display({
   subsets: ["latin"],
@@ -8,7 +9,7 @@ const heading = Playfair_Display({
   variable: "--font-heading",
 });
 
-const script = Parisienne({
+const script = Sacramento({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-script",
