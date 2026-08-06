@@ -14,7 +14,7 @@ export default function FooterLinks() {
 
       <ul className="space-y-3">
         {quickLinks.map((link) => (
-          <li key={link.name}>
+          <li key={link.title}>
             <Link
               href={link.href}
               className="
@@ -26,7 +26,7 @@ export default function FooterLinks() {
                 inline-block
               "
             >
-              {link.name}
+              {link.title}
             </Link>
           </li>
         ))}

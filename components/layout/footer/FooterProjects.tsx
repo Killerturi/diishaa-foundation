@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { projects } from "./data";
+import { projectLinks } from "./data";
 
 export default function FooterProjects() {
   return (
@@ -13,20 +13,20 @@ export default function FooterProjects() {
       {/* Project List */}
 
       <ul className="space-y-3">
-        {projects.map((project) => (
-          <li key={project}>
+        {projectLinks.map((project) => (
+          <li key={project.title}>
             <Link
-              href="/our-work"
+              href={project.href}
               className="
-                inline-block
-                text-gray-300
-                transition-all
-                duration-300
-                hover:text-[#d4af37]
-                hover:translate-x-1
-              "
+          inline-block
+          text-gray-300
+          transition-all
+          duration-300
+          hover:text-[#d4af37]
+          hover:translate-x-1
+        "
             >
-              {project}
+              {project.title}
             </Link>
           </li>
         ))}
