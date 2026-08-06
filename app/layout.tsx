@@ -1,3 +1,4 @@
+import Footer from "@/components/layout/footer/Footer";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar/Navbar";
 // import { Playfair_Display, Parisienne, Inter } from "next/font/google";
@@ -36,6 +37,8 @@ ${script.variable}
       >
         <Navbar />
         {children}
+      <Footer />
+
       </body>
     </html>
   );

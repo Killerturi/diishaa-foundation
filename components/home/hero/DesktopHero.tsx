@@ -17,7 +17,7 @@ export default function DesktopHero() {
 
       {/* Content */}
       <div className="absolute inset-0 z-20">
-        <div className="mx-auto flex h-full max-w-7xl items-center px-8">
+        <div className="mx-auto flex h-full max-w-screen-2xl items-center px-8">
           <div className="max-w-[650px]">
             {/* Script Heading */}
 

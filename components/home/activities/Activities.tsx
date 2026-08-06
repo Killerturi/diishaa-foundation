@@ -43,8 +43,8 @@ export default function Activities() {
   const scrollNext = () => emblaApi?.scrollNext();
 
   return (
-    <section className="py-10 lg:py-10 lg:pb-15 bg-white ">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-10 lg:py-10  bg-white ">
+      <div className="max-w-screen-2xl mx-auto px-4">
         {/* Heading */}
 
         <div className="flex justify-center items-center mb-10">

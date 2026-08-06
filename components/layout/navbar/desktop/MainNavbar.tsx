@@ -10,7 +10,7 @@ export default function MainNavbar() {
           mx-auto
           flex
           h-[92px]
-          max-w-[1440px]
+          max-w-screen-2xl
           items-center
           justify-between
           px-8

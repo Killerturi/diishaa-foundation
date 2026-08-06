@@ -6,7 +6,7 @@ import ImpactCard from "./ImpactCard";
 export default function DesktopImpact() {
   return (
     <section className="hidden lg:block py-10">
-      <div className="mx-auto max-w-[1320px] px-5">
+      <div className="mx-auto max-w-screen-2xl px-5">
         <div
           className="
             relative

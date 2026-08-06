@@ -37,12 +37,12 @@ const focusData = [
   },
   {
     title: "Child Welfare",
-    icon: HandHelping,
+    icon: PersonStanding,
     color: "#F57C00",
   },
   {
     title: "Elder Care",
-    icon: PersonStanding,
+    icon: HandHelping,
     color: "#B8860B",
   },
   {

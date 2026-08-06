@@ -1,4 +1,4 @@
-import { UserPlus, Heart, HandHelping, Lock } from "lucide-react";
+import { UserPlus, Heart, CalendarDays, Lock } from "lucide-react";
 
 const quickActionsData = [
   {
@@ -16,10 +16,10 @@ const quickActionsData = [
     color: "#F97316",
   },
   {
-    title: "VOLUNTEER",
-    shortTitle: "Volunteer",
-    href: "/volunteer",
-    icon: HandHelping,
+    title: "EVENTS",
+    shortTitle: "events",
+    href: "/news",
+    icon: CalendarDays,
     color: "#166534",
   },
   {

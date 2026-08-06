@@ -9,7 +9,7 @@ import {
 export default function TopBar() {
   return (
     <div className="hidden xl:block bg-[#06351D] text-white">
-      <div className="mx-auto flex h-11 max-w-[1440px] items-center justify-between px-6 text-[13px]">
+      <div className="mx-auto flex h-11 max-w-screen-2xl items-center justify-between px-6 text-[13px]">
         {/* Part 1 */}
         <div className="flex items-center gap-2 pr-12">
           <span className="text-[#D8B25A]">🇮🇳</span>

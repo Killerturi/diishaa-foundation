@@ -6,7 +6,7 @@ import FocusCard from "./FocusCard";
 export default function DesktopFocus() {
   return (
     <section className="relative z-30 -mt-12 hidden lg:block">
-      <div className="mx-auto max-w-[1300px] px-5">
+      <div className="mx-auto max-w-screen-2xl px-5">
         <div
           className="
             rounded-[28px]
