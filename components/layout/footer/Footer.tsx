@@ -15,7 +15,7 @@ import FooterColumn from "./FooterColumn";
 export default function Footer() {
   return (
     <footer
-      className="relative overflow-hidden bg-[#082915] text-white border-t-2 border-t-[#C89B3C]/400 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_-2px_4px_-2px_rgba(0,0,0,0.1)] rounded-t-3xl"
+      className="relative overflow-hidden bg-[#082915] text-white border-t-2 border-t-[#C89B3C]/400 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_-2px_4px_-2px_rgba(0,0,0,0.1)] rounded-t-4xl"
       style={{
         backgroundImage: "url('/footer/bg.jpg')",
         backgroundSize: "cover",
