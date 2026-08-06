@@ -21,7 +21,7 @@ export default function FooterColumn({
 
       {/* Heading */}
 
-      <h3 className="mb-6 text-lg font-bold uppercase tracking-wide text-[#D4AF37]">
+      <h3 className="mb-6 text-lg font-bold uppercase tracking-wide text-[#D4AF37] mt-4">
         {title}
       </h3>
 

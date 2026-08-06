@@ -63,7 +63,7 @@ export default function Footer() {
 
             {/* Social */}
 
-            <div className="mt-8 flex gap-4">
+            <div className="mt-8 flex gap-8  ">
               <Link
                 href={footerInfo.social.facebook}
                 className="rounded-full border border-[#D4AF37]/30 bg-white/10 p-3 transition hover:bg-[#D4AF37] hover:text-black"
@@ -107,7 +107,7 @@ export default function Footer() {
           <div className="relative">
             <div className="absolute -left-6 top-0 hidden h-full w-px bg-[#D4AF37]/40 lg:block" />
 
-            <h3 className="mb-6 text-lg font-bold uppercase text-[#D4AF37]">
+            <h3 className="mb-6 mt-4 text-lg font-bold uppercase text-[#D4AF37]">
               Contact Us
             </h3>
 
@@ -141,13 +141,13 @@ export default function Footer() {
       {/* Copyright */}
 
       <div className="relative border-t border-[#D4AF37]/20">
-        <div className="mx-auto flex max-w-[1700px] flex-col items-center justify-between gap-4 px-6 py-6 md:flex-row">
-          <p className="text-sm text-gray-300">
+        <div className="mx-auto flex max-w-[1700px] flex-col items-center justify-between gap-4 px-4 py-6 md:flex-row">
+          <p className="text-xs text-gray-300 font-bold">
             © {new Date().getFullYear()} Dishaa Care Foundation. All Rights
             Reserved.
           </p>
 
-          <div className="flex gap-6 text-sm">
+          <div className="flex gap-6 text-xs font-bold">
             <Link href="/privacy-policy" className="hover:text-[#D4AF37]">
               Privacy Policy
             </Link>
