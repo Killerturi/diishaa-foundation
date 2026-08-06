@@ -28,12 +28,12 @@ export default function Footer() {
 
       {/* Content */}
 
-      <div className="relative mx-auto max-w-[1700px] px-6 py-16">
+      <div className="relative mx-auto max-w-[1700px] px-4 py-16">
         <div className="grid gap-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Logo */}
 
           <div>
-            <Link href="/" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-1">
               <Image
                 src="/footer/logo.png"
                 alt="Dishaa Care Foundation"
@@ -42,16 +42,16 @@ export default function Footer() {
                 priority
               />
 
-              <div className="leading-tight">
-                <h1 className="text-2xl font-white uppercase tracking-wide">
-                  Diishaa
+              <div className="flex flex-col leading-tight min-w-[180px]">
+                <h1 className="text-2xl font-bold uppercase tracking-wide text-white">
+                  DIISHAA
                 </h1>
 
-                <p className="font-semibold  font-underline text-sm text-gray-700">
+                <p className="mt-1 whitespace-nowrap text-sm font-semibold uppercase tracking-wide text-gray-400">
                   CARE FOUNDATION
                 </p>
 
-                <span className="text-xs font-medium text-[#F57C00]">
+                <span className="mt-2 text-xs font-medium text-[#F57C00]">
                   Ek Bharat Shrestha Bharat
                 </span>
               </div>
