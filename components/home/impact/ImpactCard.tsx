@@ -1,6 +1,7 @@
 "use client";
 
 import { ComponentType } from "react";
+import CountUp from "./CountUp";
 
 interface ImpactCardProps {
   icon: ComponentType<any>;
@@ -55,7 +56,7 @@ export default function ImpactCard({
     lg:text-[16px]
 "
         >
-          {number}
+          <CountUp end={parseInt(number)} suffix="+" />
         </h3>
 
         <p
