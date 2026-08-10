@@ -1,7 +1,7 @@
 import TopBar from "./desktop/TopBar";
 import MainNavbar from "./desktop/MainNavbar";
 import Header from "./mobile/Header";
-import QuickActions from "./mobile/QuickActions";
+// import QuickActions from "./mobile/QuickActions";
 
 export default function Navbar() {
   return (
@@ -15,7 +15,7 @@ export default function Navbar() {
       {/* Mobile */}
       <div className="lg:hidden">
         <Header />
-        <QuickActions />
+        {/* <QuickActions /> */}
       </div>
     </>
   );

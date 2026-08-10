@@ -1,8 +1,10 @@
 import { Heart } from "lucide-react";
+import Link from "next/link";
 
 export default function DonateButton() {
   return (
-    <button
+    <Link
+      href="/donate"
       className="
         group
         flex
@@ -34,6 +36,6 @@ export default function DonateButton() {
         strokeWidth={2}
         className="transition-transform duration-300 group-hover:scale-110"
       />
-    </button>
+    </Link>
   );
 }
