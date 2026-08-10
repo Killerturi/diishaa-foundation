@@ -79,7 +79,7 @@ export default function PaymentMethods() {
         </h2>
 
         <p className="mt-3 text-sm leading-6 text-gray-500">
-          Select your preferred way to support Dishaa Care Foundation.
+          Select your preferred way to support Diishaa Care Foundation.
         </p>
       </div>
 

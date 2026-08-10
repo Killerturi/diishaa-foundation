@@ -6,7 +6,7 @@ export default function Logo() {
     <Link href="/" className="flex items-center gap-3">
       <Image
         src="/logo/logo.png"
-        alt="Dishaa Care Foundation"
+        alt="Diishaa Care Foundation"
         width={70}
         height={70}
         priority

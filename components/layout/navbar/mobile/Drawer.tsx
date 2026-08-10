@@ -67,7 +67,7 @@ export default function Drawer({ open, onClose }: DrawerProps) {
                   src="/logo/logo.png"
                   width={50}
                   height={50}
-                  alt="Dishaa"
+                  alt="Diishaa"
                 />
 
                 <div>

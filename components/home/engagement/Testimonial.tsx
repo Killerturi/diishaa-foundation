@@ -13,7 +13,7 @@ export default function Testimonial() {
       {/* Review */}
 
       <p className="mt-6 text-gray-600 leading-8">
-        Dishaa Foundation is doing an incredible job serving the community.
+        Diishaa Foundation is doing an incredible job serving the community.
         Their dedication, transparency, and commitment inspire everyone to
         contribute towards a better society.
       </p>

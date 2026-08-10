@@ -19,7 +19,7 @@ export default function FooterContact() {
           </div>
 
           <p className="text-sm leading-6 text-gray-300">
-            Dishaa Care Foundation
+            Diishaa Care Foundation
             <br />
             Durgapur, Paschim Bardhaman
             <br />

@@ -16,7 +16,7 @@ export default function FooterBrand() {
       <Link href="/" className="inline-block">
         <Image
           src="/footer/logo.png"
-          alt="Dishaa Care Foundation"
+          alt="Diishaa Care Foundation"
           width={240}
           height={80}
           className="object-contain"

@@ -111,16 +111,16 @@ export default function DonationSupport() {
 
               <h2
                 className="
-                  font-[var(--font-heading)]
-                  text-2xl
-                  font-bold
-                  leading-tight
-                  text-white
-                  sm:text-3xl
-                "
+    font-[var(--font-heading)]
+    text-xl
+    font-bold
+    leading-tight
+    text-white
+    sm:text-3xl
+  "
               >
                 Every Contribution Can
-                <span className="block text-[#F6C453]">
+                <span className="block whitespace-nowrap text-[#F6C453]">
                   Create a Better Tomorrow
                 </span>
               </h2>

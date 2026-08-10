@@ -36,7 +36,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-1">
               <Image
                 src="/footer/logo.png"
-                alt="Dishaa Care Foundation"
+                alt="Diishaa Care Foundation"
                 width={170}
                 height={170}
                 priority
@@ -143,7 +143,7 @@ export default function Footer() {
       <div className="relative border-t border-[#D4AF37]/20">
         <div className="mx-auto flex max-w-[1700px] flex-col items-center justify-between gap-4 px-4 py-6 md:flex-row">
           <p className="text-xs text-gray-300 font-bold">
-            © {new Date().getFullYear()} Dishaa Care Foundation. All Rights
+            © {new Date().getFullYear()} Diishaa Care Foundation. All Rights
             Reserved.
           </p>
 

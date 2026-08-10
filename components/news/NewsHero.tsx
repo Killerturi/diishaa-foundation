@@ -41,7 +41,7 @@ export default function NewsHero() {
 
           {/* DESCRIPTION */}
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:mt-6 sm:text-lg sm:leading-8">
-            Discover the people, events and initiatives behind Dishaa
+            Discover the people, events and initiatives behind Diishaa
             Foundation's journey towards creating meaningful change in
             communities.
           </p>

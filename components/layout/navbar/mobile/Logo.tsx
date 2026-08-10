@@ -7,7 +7,7 @@ export default function Logo() {
       {/* Logo Image */}
       <Image
         src="/logo/logo.png"
-        alt="Dishaa Care Foundation"
+        alt="Diishaa Care Foundation"
         width={60}
         height={60}
         priority

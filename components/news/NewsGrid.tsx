@@ -26,7 +26,7 @@ export default function NewsGrid({ news }: NewsGridProps) {
         {/* DESCRIPTION */}
         <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-500">
           We don't have any updates in this category right now. Check back soon
-          for new stories, events and announcements from Dishaa Foundation.
+          for new stories, events and announcements from Diishaa Foundation.
         </p>
 
         {/* ACCENT */}

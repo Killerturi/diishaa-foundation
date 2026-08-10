@@ -39,10 +39,10 @@ export const newsData: NewsItem[] = [
     title: "Community Health Camp Brings Essential Care Closer to Families",
 
     excerpt:
-      "Dishaa Foundation is bringing basic health awareness, consultation and support closer to communities through a dedicated health camp.",
+      "Diishaa Foundation is bringing basic health awareness, consultation and support closer to communities through a dedicated health camp.",
 
     content:
-      "Dishaa Foundation continues its commitment to creating healthier and more informed communities through grassroots initiatives. The upcoming community health camp will provide basic health consultation, awareness and guidance to participating families.",
+      "Diishaa Foundation continues its commitment to creating healthier and more informed communities through grassroots initiatives. The upcoming community health camp will provide basic health consultation, awareness and guidance to participating families.",
 
     category: "Upcoming",
 
@@ -72,7 +72,7 @@ export const newsData: NewsItem[] = [
       "Our education initiative focuses on helping children access learning resources and opportunities that can strengthen their future.",
 
     content:
-      "Education can open doors to opportunities and create long-term change. Through our education initiatives, Dishaa Foundation works with communities to support children and encourage continued learning.",
+      "Education can open doors to opportunities and create long-term change. Through our education initiatives, Diishaa Foundation works with communities to support children and encourage continued learning.",
 
     category: "Impact Stories",
 
@@ -93,7 +93,7 @@ export const newsData: NewsItem[] = [
     title: "Community Awareness Programme Reaches Local Families",
 
     excerpt:
-      "A community-focused awareness programme brought together local residents, volunteers and members of the Dishaa Foundation team.",
+      "A community-focused awareness programme brought together local residents, volunteers and members of the Diishaa Foundation team.",
 
     content:
       "The programme created an opportunity for community members to discuss important social issues, available support and ways to work together for positive change.",
@@ -137,10 +137,10 @@ export const newsData: NewsItem[] = [
     title: "Building a Stronger Volunteer Community",
 
     excerpt:
-      "Dishaa Foundation continues to welcome individuals who want to contribute their time, skills and energy towards meaningful community initiatives.",
+      "Diishaa Foundation continues to welcome individuals who want to contribute their time, skills and energy towards meaningful community initiatives.",
 
     content:
-      "Volunteers play an important role in turning ideas into action. Dishaa Foundation is working towards building a community of people who are willing to contribute their skills and time to social initiatives.",
+      "Volunteers play an important role in turning ideas into action. Diishaa Foundation is working towards building a community of people who are willing to contribute their skills and time to social initiatives.",
 
     category: "Announcements",
 
@@ -154,10 +154,10 @@ export const newsData: NewsItem[] = [
     id: "6",
     slug: "dishaa-foundation-community-milestone",
 
-    title: "Dishaa Foundation Reaches a New Community Impact Milestone",
+    title: "Diishaa Foundation Reaches a New Community Impact Milestone",
 
     excerpt:
-      "A growing network of volunteers and supporters is helping Dishaa Foundation expand its community-focused initiatives.",
+      "A growing network of volunteers and supporters is helping Diishaa Foundation expand its community-focused initiatives.",
 
     content:
       "Every initiative becomes possible through the support of volunteers, community members and well-wishers. This milestone reflects the collective effort behind the foundation's growing work.",
