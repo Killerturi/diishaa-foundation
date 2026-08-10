@@ -41,7 +41,7 @@ export default function NewsPage() {
   }, []);
 
   /* =========================================
-     FILTER NEWS
+     FILTER NEWS 
   ========================================== */
 
   const filteredNews = useMemo(() => {
