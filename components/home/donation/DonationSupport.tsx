@@ -112,11 +112,11 @@ export default function DonationSupport() {
               <h2
                 className="
                   font-[var(--font-heading)]
-                  text-3xl
+                  text-2xl
                   font-bold
                   leading-tight
                   text-white
-                  sm:text-4xl
+                  sm:text-3xl
                 "
               >
                 Every Contribution Can
