@@ -161,7 +161,10 @@ export default function DonationHero() {
 
           <div className="hidden h-5 w-px bg-[#D8D8D8] sm:block" />
 
-          <div className="flex items-center gap-2 text-sm font-medium text-[#063B20]">
+          <div
+            id="donation-payment"
+            className="flex items-center gap-2 text-sm font-medium text-[#063B20]"
+          >
             <IndianRupee size={19} className="text-[#F47B20]" />
             Every Contribution Matters
           </div>

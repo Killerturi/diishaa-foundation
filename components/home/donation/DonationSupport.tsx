@@ -1,7 +1,33 @@
+"use client";
+
+import { useState } from "react";
 import { Heart, HandHeart, ArrowRight } from "lucide-react";
-import Link from "next/link";
 
 export default function DonationSupport() {
+  const [highlightPayment, setHighlightPayment] = useState(false);
+
+  const handleDonateClick = () => {
+    const paymentSection = document.getElementById("donation-payment");
+
+    if (!paymentSection) return;
+
+    paymentSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    // Give visual feedback every time the button is clicked
+    setHighlightPayment(false);
+
+    requestAnimationFrame(() => {
+      setHighlightPayment(true);
+
+      setTimeout(() => {
+        setHighlightPayment(false);
+      }, 1200);
+    });
+  };
+
   return (
     <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
       <div className="mx-auto max-w-6xl">
@@ -23,8 +49,7 @@ export default function DonationSupport() {
             lg:py-14
           "
         >
-          {/* Saffron decorative glow */}
-
+          {/* Decorative saffron glow */}
           <div
             className="
               absolute
@@ -38,8 +63,7 @@ export default function DonationSupport() {
             "
           />
 
-          {/* Green decorative glow */}
-
+          {/* Decorative green glow */}
           <div
             className="
               absolute
@@ -52,8 +76,6 @@ export default function DonationSupport() {
               blur-3xl
             "
           />
-
-          {/* Content */}
 
           <div
             className="
@@ -69,8 +91,7 @@ export default function DonationSupport() {
               lg:text-left
             "
           >
-            {/* Left */}
-
+            {/* Content */}
             <div className="max-w-2xl">
               <div className="mb-4 flex items-center justify-center gap-2 lg:justify-start">
                 <Heart size={18} className="fill-[#F47B20] text-[#F47B20]" />
@@ -91,11 +112,11 @@ export default function DonationSupport() {
               <h2
                 className="
                   font-[var(--font-heading)]
-                  text-2xl
+                  text-3xl
                   font-bold
                   leading-tight
                   text-white
-                  sm:text-3xl
+                  sm:text-4xl
                 "
               >
                 Every Contribution Can
@@ -119,11 +140,11 @@ export default function DonationSupport() {
               </p>
             </div>
 
-            {/* Right */}
-
+            {/* Donate Button */}
             <div className="shrink-0">
-              <Link
-                href="/donate"
+              <button
+                type="button"
+                onClick={handleDonateClick}
                 className="
                   group
                   inline-flex
@@ -148,14 +169,22 @@ export default function DonationSupport() {
               >
                 <HandHeart
                   size={20}
-                  className="transition-transform duration-300 group-hover:scale-110"
+                  className="
+                    transition-transform
+                    duration-300
+                    group-hover:scale-110
+                  "
                 />
                 Donate Now
                 <ArrowRight
                   size={18}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
+                  className="
+                    transition-transform
+                    duration-300
+                    group-hover:translate-x-1
+                  "
                 />
-              </Link>
+              </button>
             </div>
           </div>
         </div>

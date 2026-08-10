@@ -185,56 +185,6 @@ export default function DonationInfo() {
             );
           })}
         </div>
-
-        {/* Trust Message */}
-
-        <div
-          className="
-            mx-auto
-            mt-10
-            flex
-            max-w-screen-2xl
-            flex-col
-            items-center
-            justify-center
-            gap-3
-            rounded-2xl
-            border
-            border-[#DDE9DF]
-            bg-[#F1F8F3]
-            px-5
-            py-5
-            text-center
-            sm:flex-row
-            sm:text-left
-          "
-        >
-          <div
-            className="
-              flex
-              h-11
-              w-11
-              shrink-0
-              items-center
-              justify-center
-              rounded-full
-              bg-[#063B20]
-            "
-          >
-            <ShieldCheck size={23} className="text-[#F6C453]" />
-          </div>
-
-          <div>
-            <h3 className="text-sm font-bold text-[#063B20]">
-              Every contribution matters
-            </h3>
-
-            <p className="mt-1 text-xs leading-5 text-gray-500">
-              Your support helps us continue our efforts toward stronger and
-              more empowered communities.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

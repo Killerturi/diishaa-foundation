@@ -14,7 +14,7 @@ export default function DonationPage() {
       <DonationHero />
 
       {/* Donation Amount + Payment */}
-      <section className="relative z-10 mx-auto -mt-10 max-w-6xl px-4 sm:px-6 lg:-mt-16">
+      <section  className="relative z-10 mx-auto -mt-10 max-w-6xl px-4 sm:px-6 lg:-mt-16">
         <div
           className="
             overflow-hidden

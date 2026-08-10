@@ -49,7 +49,7 @@ export default function PaymentMethods() {
   };
 
   return (
-    <div className="p-6 sm:p-8 lg:p-10">
+    <div  className="p-6 sm:p-8 lg:p-10">
       {/* Heading */}
 
       <div className="mb-7">
