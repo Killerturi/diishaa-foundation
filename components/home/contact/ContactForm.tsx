@@ -121,7 +121,7 @@ export default function ContactForm() {
             <p className="text-sm font-bold">Message sent successfully!</p>
 
             <p className="mt-1 text-xs text-gray-600">
-              Thank you for reaching out to Dishaa Care Foundation.
+              Thank you for reaching out to Diishaa Care Foundation.
             </p>
           </div>
         </div>
@@ -519,7 +519,7 @@ export default function ContactForm() {
             text-gray-400
           "
         >
-          By submitting this form, you agree that Dishaa Care Foundation may use
+          By submitting this form, you agree that Diishaa Care Foundation may use
           the information provided to respond to your enquiry.
         </p>
 

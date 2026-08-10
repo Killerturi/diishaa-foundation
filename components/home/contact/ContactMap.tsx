@@ -444,7 +444,7 @@ export default function ContactMap() {
                   text-[#063B20]
                 "
               >
-                Dishaa Care Foundation
+                Diishaa Care Foundation
               </p>
 
               <p className="mt-1 text-[10px] text-gray-500">

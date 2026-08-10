@@ -162,7 +162,7 @@ export default function ContactHero() {
               "
             >
               Have a question, want to work with us, or simply want to know more
-              about Dishaa Care Foundation? We would love to hear from you.
+              about Diishaa Care Foundation? We would love to hear from you.
             </p>
 
             {/* Quick contact links */}
@@ -171,7 +171,7 @@ export default function ContactHero() {
               {/* Email */}
 
               <a
-                href="mailto:info@dishaa.org"
+                href="mailto:info@diishaa.org"
                 className="
                   group
                   flex

@@ -203,7 +203,7 @@ export default function ContactInfo() {
               </p>
 
               <a
-                href="mailto:info@dishaa.org"
+                href="mailto:info@diishaa.org"
                 className="
                   mt-1
                   block
@@ -215,7 +215,7 @@ export default function ContactInfo() {
                   hover:text-[#F6C453]
                 "
               >
-                info@dishaa.org
+                info@diishaa.org
               </a>
 
               <p className="mt-0.5 text-xs text-white/55">
@@ -353,4 +353,3 @@ export default function ContactInfo() {
     </div>
   );
 }
-    
