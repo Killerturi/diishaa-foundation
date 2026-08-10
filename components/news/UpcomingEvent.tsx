@@ -6,18 +6,8 @@ interface UpcomingEventProps {
 }
 
 export default function UpcomingEvent({ event }: UpcomingEventProps) {
-  // Store the optional value in a local variable.
-  // After this check TypeScript knows it is a string.
-  const eventDate = event.eventDate;
-
-  if (!eventDate) {
-    return null;
-  }
-
   return (
-    <section
-      className="relative scroll-mt-24 overflow-hidden rounded-3xl bg-[#0B3D91] shadow-xl"
-    >
+    <section className="relative overflow-hidden rounded-3xl bg-[#0B3D91] shadow-xl">
       {/* =========================================
           TRICOLOR TOP ACCENT
       ========================================== */}
@@ -58,15 +48,15 @@ export default function UpcomingEvent({ event }: UpcomingEventProps) {
           ====================================== */}
           <div className="flex h-24 w-24 flex-col items-center justify-center rounded-2xl bg-white shadow-lg">
             <span className="text-xs font-bold uppercase tracking-wider text-[#0B3D91]">
-              {getMonth(eventDate)}
+              {getMonth(event.date)}
             </span>
 
             <span className="mt-0.5 text-4xl font-black leading-none text-[#FF9933]">
-              {getDay(eventDate)}
+              {getDay(event.date)}
             </span>
 
             <span className="mt-1 text-[10px] font-semibold text-slate-500">
-              {getYear(eventDate)}
+              {getYear(event.date)}
             </span>
           </div>
 
@@ -143,20 +133,20 @@ export default function UpcomingEvent({ event }: UpcomingEventProps) {
    DATE HELPERS
 ============================================= */
 
-function getDate(eventDate: string) {
-  return new Date(eventDate);
+function getDate(dateString: string) {
+  return new Date(dateString);
 }
 
-function getMonth(eventDate: string) {
-  return getDate(eventDate).toLocaleDateString("en-IN", {
+function getMonth(dateString: string) {
+  return getDate(dateString).toLocaleDateString("en-IN", {
     month: "short",
   });
 }
 
-function getDay(eventDate: string) {
-  return getDate(eventDate).getDate();
+function getDay(dateString: string) {
+  return getDate(dateString).getDate();
 }
 
-function getYear(eventDate: string) {
-  return getDate(eventDate).getFullYear();
+function getYear(dateString: string) {
+  return getDate(dateString).getFullYear();
 }
