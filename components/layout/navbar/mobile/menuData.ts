@@ -30,8 +30,8 @@ const menuData = [
     icon: HandCoins,
   },
   {
-    title: "Volunteer",
-    href: "/volunteer",
+    title: "Join us",
+    href: "/join-us",
     icon: BadgeHelp,
   },
   {

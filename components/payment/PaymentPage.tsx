@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { PaymentMethod, PaymentPurpose } from "./payment.data";
 
 import PaymentHeader from "./PaymentHeader";
@@ -179,7 +179,37 @@ function PaymentSuccess({
   purpose: PaymentPurpose;
   amount: number;
 }) {
+  const router = useRouter();
+
   const isDonation = purpose === "donation";
+
+  const [secondsLeft, setSecondsLeft] = useState(5);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSecondsLeft((previous) => {
+        if (previous <= 1) {
+          clearInterval(interval);
+          return 0;
+        }
+
+        return previous - 1;
+      });
+    }, 1000);
+
+    const timer = setTimeout(() => {
+      if (isDonation) {
+        router.push("/donate/payment");
+      } else {
+        router.push("/join-us");
+      }
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timer);
+    };
+  }, [isDonation, router]);
 
   return (
     <main className="min-h-screen bg-slate-50">
@@ -288,6 +318,13 @@ function PaymentSuccess({
 
               <p className="mt-1 text-sm font-bold text-[#138808]">
                 Successfully Completed
+              </p>
+            </div>
+            <div className="mt-6">
+              <p className="text-xs text-slate-400">
+                Returning to the donation page in{" "}
+                <span className="font-bold text-[#0B3D91]">{secondsLeft}</span>{" "}
+                seconds...
               </p>
             </div>
           </div>
