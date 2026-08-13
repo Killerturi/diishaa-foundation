@@ -3,8 +3,8 @@ import { UserPlus, Heart, CalendarDays, Lock } from "lucide-react";
 const quickActionsData = [
   {
     title: "BECOME A MEMBER",
-    shortTitle: "Member",
-    href: "/membership",
+    shortTitle: "Join us",
+    href: "/join-us",
     icon: UserPlus,
     color: "#166534",
   },

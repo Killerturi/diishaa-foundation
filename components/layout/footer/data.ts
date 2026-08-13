@@ -17,7 +17,7 @@ export const quickLinks = [
   },
   {
     title: "JOIN US",
-    href: "/membership",
+    href: "/join-us",
   },
   {
     title: "Donate Now",

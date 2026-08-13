@@ -100,7 +100,7 @@ export default function Drawer({ open, onClose }: DrawerProps) {
 
             <div className="border-t p-4 space-y-3">
               <Link
-                href="/membership"
+                href="/join-us"
                 onClick={onClose}
                 className="
                   flex
