@@ -6,7 +6,9 @@ export default function SupportCause() {
     <div className="h-full rounded-3xl border border-amber-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl">
       {/* Heading */}
 
-      <h3 className="text-2xl text-center font-bold text-gray-900">Support Our Cause</h3>
+      <h3 className="text-2xl text-center font-bold text-gray-900">
+        Support Our Cause
+      </h3>
 
       <p className="mt-2 text-gray-600">
         Your contribution helps us create a better future for those in need.
@@ -49,7 +51,7 @@ export default function SupportCause() {
       {/* Donate Button */}
 
       <Link
-        href="/donate"
+        href="/donate/payment"
         className="
           mt-8
           flex

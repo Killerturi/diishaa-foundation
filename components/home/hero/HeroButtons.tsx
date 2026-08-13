@@ -9,7 +9,7 @@ export default function HeroButtons() {
       {/* Become Member */}
 
       <Link
-        href="/membership"
+        href="/join-us"
         className="
           group
           flex
@@ -40,7 +40,7 @@ export default function HeroButtons() {
             tracking-[1px]
           "
         >
-          Become a Member
+          JOIN US
         </span>
       </Link>
 

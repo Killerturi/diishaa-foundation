@@ -16,7 +16,7 @@ export const quickLinks = [
     href: "/gallery",
   },
   {
-    title: "Become a Member",
+    title: "JOIN US",
     href: "/membership",
   },
   {

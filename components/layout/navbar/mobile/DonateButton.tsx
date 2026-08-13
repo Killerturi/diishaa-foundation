@@ -4,7 +4,7 @@ import { Heart } from "lucide-react";
 export default function DonateButton() {
   return (
     <Link
-      href="/donate"
+      href="/donate/payment"
       className="
         inline-flex
         items-center

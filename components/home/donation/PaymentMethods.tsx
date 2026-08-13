@@ -217,7 +217,7 @@ export default function PaymentMethods() {
           active:scale-[0.98]
         "
       >
-        <span>Donate Now</span>
+        <span>Donate Now </span>
 
         <span className="text-[#F47B20]">♥</span>
       </button>

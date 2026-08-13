@@ -113,11 +113,11 @@ export default function Drawer({ open, onClose }: DrawerProps) {
                   text-white
                 "
               >
-                Become a Member
+                JOIN US
               </Link>
 
               <Link
-                href="/donate"
+                href="/donate/payment"
                 onClick={onClose}
                 className="
                   flex

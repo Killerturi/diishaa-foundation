@@ -16,8 +16,8 @@ export const navLinks = [
     href: "/gallery",
   },
   {
-    name: "Members",
-    href: "/members",
+    name: "JOIN US",
+    href: "/join-us",
   },
   {
     name: "Events",

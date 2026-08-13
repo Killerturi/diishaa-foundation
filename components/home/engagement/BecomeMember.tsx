@@ -7,7 +7,7 @@ export default function BecomeMember() {
     <div className="h-full rounded-3xl border border-amber-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl">
       {/* Heading */}
 
-      <h3 className="text-2xl font-bold text-gray-900">Become a Member</h3>
+      <h3 className="text-2xl font-bold text-gray-900">Join Our Community </h3>
 
       <div className="mt-6 grid grid-cols-2 gap-6">
         {/* Left */}
@@ -15,12 +15,12 @@ export default function BecomeMember() {
         <div className="space-y-4">
           <div className="flex items-center gap-3">
             <BadgeCheck className="text-green-600" size={18} />
-            <span className="text-gray-700">Online Membership</span>
+            <span className="text-gray-700">Online Registration</span>
           </div>
 
           <div className="flex items-center gap-3">
             <CreditCard className="text-green-600" size={18} />
-            <span className="text-gray-700">Instant Member ID</span>
+            <span className="text-gray-700">Instant ID</span>
           </div>
 
           <div className="flex items-center gap-3">
@@ -30,11 +30,11 @@ export default function BecomeMember() {
 
           <div className="flex items-center gap-3">
             <ShieldCheck className="text-green-600" size={18} />
-            <span className="text-gray-700">Membership Certificate</span>
+            <span className="text-gray-700">Digital Certificate</span>
           </div>
 
           <Link
-            href="/membership"
+            href="/join-us"
             className="
               mt-6
               inline-flex

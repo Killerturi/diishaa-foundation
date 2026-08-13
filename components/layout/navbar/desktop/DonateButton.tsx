@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function DonateButton() {
   return (
     <Link
-      href="/donate"
+      href="/donate/payment"
       className="
         group
         flex
@@ -29,7 +29,7 @@ export default function DonateButton() {
         hover:shadow-[0_8px_22px_rgba(0,0,0,0.28)]
       "
     >
-      <span>DONATE NOW</span>
+      <span>DONATE NOW </span>
 
       <Heart
         size={19}
