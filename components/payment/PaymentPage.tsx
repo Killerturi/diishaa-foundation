@@ -199,7 +199,7 @@ function PaymentSuccess({
 
     const timer = setTimeout(() => {
       if (isDonation) {
-        router.push("/donate/payment");
+        router.push("/donate");
       } else {
         router.push("/join-us");
       }
