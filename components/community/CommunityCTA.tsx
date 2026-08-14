@@ -1,12 +1,9 @@
 "use client";
 
+import Link from "next/link";
+
 export default function CommunityCTA() {
-  const handleJoinNow = () => {
-    document.getElementById("community-application")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
+
 
   return (
     <section className="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-20">
@@ -62,9 +59,8 @@ export default function CommunityCTA() {
             </p>
 
             {/* CTA */}
-            <button
-              type="button"
-              onClick={handleJoinNow}
+            <Link
+                  href="/join-us/apply"
               className="
                 mt-7
                 inline-flex
@@ -89,7 +85,7 @@ export default function CommunityCTA() {
             >
               Start Your Application
               <span className="ml-2 text-base">→</span>
-            </button>
+            </Link>
 
             {/* SUPPORTING TEXT */}
             <p className="mt-4 text-[11px] text-white/45">

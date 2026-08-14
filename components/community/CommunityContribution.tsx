@@ -1,15 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { communityContribution } from "./community.data";
 
 export default function CommunityContribution() {
-  const handleJoinNow = () => {
-    document.getElementById("community-application")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
-
   return (
     <section className="relative overflow-hidden bg-[#0B3D91] py-12 sm:py-12 lg:py-12">
       {/* =========================================
@@ -143,9 +137,8 @@ export default function CommunityContribution() {
                   </div>
 
                   {/* CTA */}
-                  <button
-                    type="button"
-                    onClick={handleJoinNow}
+                  <Link
+                    href="/join-us/apply"
                     className="
                       mt-6
                       inline-flex
@@ -171,7 +164,7 @@ export default function CommunityContribution() {
                   >
                     Join Our Community
                     <span className="ml-2 text-base">→</span>
-                  </button>
+                  </Link>
 
                   <p className="mt-3 text-[11px] leading-5 text-slate-400">
                     Payment is available only after application approval.

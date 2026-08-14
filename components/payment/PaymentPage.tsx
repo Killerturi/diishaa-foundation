@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { Check, ShieldCheck } from "lucide-react";
+
 import { PaymentMethod, PaymentPurpose } from "./payment.data";
 
 import PaymentHeader from "./PaymentHeader";
@@ -10,15 +12,16 @@ import PaymentMethods from "./PaymentMethods";
 import PaymentSummary from "./PaymentSummary";
 import PaymentButton from "./PaymentButton";
 
+import CommunityStepper from "@/components/community/CommunityStepper";
+
 interface PaymentPageProps {
   purpose: PaymentPurpose;
 
   /*
-    For Community Membership this should eventually
-    come from the approved application/payment record.
+    For Community Membership this is temporary.
 
-    For now we use the temporary value passed by
-    the page.
+    Later this amount will come from the approved
+    membership/application record.
   */
   membershipAmount?: number;
 }
@@ -27,138 +30,230 @@ export default function PaymentPage({
   purpose,
   membershipAmount = 500,
 }: PaymentPageProps) {
-  const isDonation = purpose === "donation";
+  const router = useRouter();
 
-  /* =========================================
+  const isDonation = purpose === "donation";
+  const isCommunityMembership = purpose === "community-membership";
+
+  /* =========================================================
      PAYMENT AMOUNT
-  ========================================== */
+  ========================================================= */
 
   const [amount, setAmount] = useState(isDonation ? 500 : membershipAmount);
 
-  /* =========================================
+  /* =========================================================
      PAYMENT METHOD
-  ========================================== */
+  ========================================================= */
 
   const [selectedMethod, setSelectedMethod] = useState<PaymentMethod>("upi");
 
-  /* =========================================
+  /* =========================================================
      PAYMENT STATUS
-  ========================================== */
+  ========================================================= */
 
   const [paymentStarted, setPaymentStarted] = useState(false);
 
   const [paymentCompleted, setPaymentCompleted] = useState(false);
 
-  /* =========================================
+  /* =========================================================
      PAYMENT START
-  ========================================== */
+  ========================================================= */
 
   const handlePaymentStart = () => {
     setPaymentStarted(true);
     setPaymentCompleted(false);
   };
 
-  /* =========================================
+  /* =========================================================
      PAYMENT COMPLETE
-  ========================================== */
+  ========================================================= */
 
   const handlePaymentComplete = () => {
     setPaymentCompleted(true);
     setPaymentStarted(false);
   };
 
-  /* =========================================
+  /* =========================================================
      SUCCESS SCREEN
-  ========================================== */
+  ========================================================= */
 
   if (paymentCompleted) {
     return <PaymentSuccess purpose={purpose} amount={amount} />;
   }
 
   return (
-    <main className="min-h-screen bg-slate-50">
-      {/* =====================================
-          TOP TRICOLOR LINE
-      ====================================== */}
+    <main className="min-h-screen bg-[#F7F7F3]">
+      {/* =====================================================
+          TRICOLOR TOP ACCENT
+      ====================================================== */}
 
       <div className="flex h-1.5">
         <div className="w-1/3 bg-[#FF9933]" />
-        <div className="w-1/3 bg-[#0B3D91]" />
+        <div className="w-1/3 bg-white" />
         <div className="w-1/3 bg-[#138808]" />
       </div>
 
-      {/* =====================================
+      {/* =====================================================
           PAGE CONTENT
-      ====================================== */}
+      ====================================================== */}
 
-      <div className="mx-auto max-w-6xl px-5 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
-        {/* ===================================
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
+        {/* ===================================================
+            COMMUNITY STEPPER
+        ==================================================== */}
+
+        {isCommunityMembership && (
+          <div className="mb-8 sm:mb-10">
+            <CommunityStepper currentStep="payment" />
+          </div>
+        )}
+
+        {/* ===================================================
             HEADER
-        ==================================== */}
+        ==================================================== */}
 
         <PaymentHeader purpose={purpose} />
 
-        {/* ===================================
+        {/* ===================================================
             PAYMENT CONTENT
-        ==================================== */}
+        ==================================================== */}
 
-        <div className="mx-auto mt-10 max-w-5xl sm:mt-12">
-          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-            {/* =================================
+        <div className="mx-auto mt-8 max-w-5xl sm:mt-10">
+          <div
+            className="
+              grid
+              gap-5
+              lg:grid-cols-[1.15fr_0.85fr]
+              lg:items-start
+            "
+          >
+            {/* =================================================
                 LEFT COLUMN
-            ================================== */}
+            ================================================== */}
 
-            <div className="space-y-6">
+            <div className="space-y-5">
               {/* AMOUNT */}
 
-              <PaymentAmount
-                purpose={purpose}
-                amount={amount}
-                onAmountChange={setAmount}
-              />
+              <div
+                className="
+                  overflow-hidden
+                  rounded-3xl
+                  border
+                  border-[#E4DDCF]
+                  bg-white
+                  shadow-[0_12px_35px_rgba(6,59,32,0.06)]
+                "
+              >
+                <PaymentAmount
+                  purpose={purpose}
+                  amount={amount}
+                  onAmountChange={setAmount}
+                />
+              </div>
 
               {/* PAYMENT METHODS */}
 
-              <PaymentMethods
-                purpose={purpose}
-                selectedMethod={selectedMethod}
-                onMethodChange={setSelectedMethod}
-              />
+              <div
+                className="
+                  overflow-hidden
+                  rounded-3xl
+                  border
+                  border-[#E4DDCF]
+                  bg-white
+                  shadow-[0_12px_35px_rgba(6,59,32,0.06)]
+                "
+              >
+                <PaymentMethods
+                  purpose={purpose}
+                  selectedMethod={selectedMethod}
+                  onMethodChange={setSelectedMethod}
+                />
+              </div>
             </div>
 
-            {/* =================================
+            {/* =================================================
                 RIGHT COLUMN
-            ================================== */}
+            ================================================== */}
 
             <div className="lg:sticky lg:top-24">
-              <PaymentSummary
-                purpose={purpose}
-                amount={amount}
-                selectedMethod={selectedMethod}
-              />
+              <div
+                className="
+                  overflow-hidden
+                  rounded-3xl
+                  border
+                  border-[#E4DDCF]
+                  bg-white
+                  shadow-[0_15px_40px_rgba(6,59,32,0.08)]
+                "
+              >
+                {/* =================================================
+                    SUMMARY
+                ================================================== */}
 
-              {/* =================================
-                  FINAL BUTTON
-              ================================== */}
+                <PaymentSummary
+                  purpose={purpose}
+                  amount={amount}
+                  selectedMethod={selectedMethod}
+                />
 
-              <PaymentButton
-                purpose={purpose}
-                amount={amount}
-                selectedMethod={selectedMethod}
-                disabled={paymentStarted || amount <= 0}
-                onPaymentStart={handlePaymentStart}
-                onPaymentComplete={handlePaymentComplete}
-              />
+                {/* =================================================
+                    PAYMENT BUTTON
+                ================================================== */}
+
+                <div className="px-5 pb-5 sm:px-6 sm:pb-6">
+                  <PaymentButton
+                    purpose={purpose}
+                    amount={amount}
+                    selectedMethod={selectedMethod}
+                    disabled={paymentStarted || amount <= 0}
+                    onPaymentStart={handlePaymentStart}
+                    onPaymentComplete={handlePaymentComplete}
+                  />
+
+                  {/* SECURITY */}
+
+                  <div className="mt-4 flex items-center justify-center gap-2">
+                    <ShieldCheck size={14} className="text-[#138808]" />
+
+                    <p className="text-[10px] text-slate-400">
+                      Secure &amp; trusted payment
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* =================================================
+                  COMMUNITY PAYMENT NOTE
+              ================================================== */}
+
+              {isCommunityMembership && (
+                <div
+                  className="
+                    mt-4
+                    rounded-2xl
+                    border
+                    border-[#138808]/15
+                    bg-[#138808]/5
+                    px-4
+                    py-3
+                  "
+                >
+                  <p className="text-center text-[10px] leading-5 text-slate-500">
+                    Your Community Membership will be activated after successful
+                    payment verification.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
 
-        {/* =====================================
+        {/* =====================================================
             BOTTOM TRUST
-        ====================================== */}
+        ====================================================== */}
 
-        <div className="mx-auto mt-10 max-w-3xl text-center sm:mt-14">
-          <p className="text-xs leading-5 text-slate-400">
+        <div className="mx-auto mt-8 max-w-3xl text-center sm:mt-12">
+          <p className="text-[10px] leading-5 text-slate-400 sm:text-xs">
             Diishaa Foundation is committed to handling your contribution
             responsibly and securely.
           </p>
@@ -182,6 +277,7 @@ function PaymentSuccess({
   const router = useRouter();
 
   const isDonation = purpose === "donation";
+  const isCommunityMembership = purpose === "community-membership";
 
   const [secondsLeft, setSecondsLeft] = useState(5);
 
@@ -198,6 +294,22 @@ function PaymentSuccess({
     }, 1000);
 
     const timer = setTimeout(() => {
+      /*
+        TEMPORARY FRONTEND FLOW
+
+        Donation:
+        Payment Success → Donation Page
+
+        Community:
+        Payment Success → Join Us Page
+
+        Later Community will become:
+
+        Payment Success
+              ↓
+        Community Account
+      */
+
       if (isDonation) {
         router.push("/donate");
       } else {
@@ -212,74 +324,198 @@ function PaymentSuccess({
   }, [isDonation, router]);
 
   return (
-    <main className="min-h-screen bg-slate-50">
-      {/* =====================================
+    <main className="min-h-screen bg-[#F7F7F3]">
+      {/* =====================================================
           TRICOLOR
-      ====================================== */}
+      ====================================================== */}
 
       <div className="flex h-1.5">
         <div className="w-1/3 bg-[#FF9933]" />
-        <div className="w-1/3 bg-[#0B3D91]" />
+        <div className="w-1/3 bg-white" />
         <div className="w-1/3 bg-[#138808]" />
       </div>
 
-      <div className="flex min-h-[calc(100vh-6px)] items-center justify-center px-5 py-12 sm:px-6">
-        <div className="w-full max-w-xl overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-slate-200">
-          {/* =================================
-              TOP ACCENT
-          ================================== */}
+      <div
+        className="
+          flex
+          min-h-[calc(100vh-6px)]
+          items-center
+          justify-center
+          px-4
+          py-10
+          sm:px-6
+          sm:py-14
+        "
+      >
+        <div
+          className="
+            w-full
+            max-w-xl
+            overflow-hidden
+            rounded-3xl
+            border
+            border-[#E4DDCF]
+            bg-white
+            shadow-[0_20px_55px_rgba(6,59,32,0.10)]
+          "
+        >
+          {/* TOP ACCENT */}
 
           <div className="h-1 bg-[#138808]" />
 
           <div className="px-5 py-10 text-center sm:px-10 sm:py-14">
-            {/* SUCCESS ICON */}
+            {/* =================================================
+                SUCCESS ICON
+            ================================================== */}
 
-            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#138808]/10">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#138808] text-2xl font-black text-white">
+            <div
+              className="
+                mx-auto
+                flex
+                h-20
+                w-20
+                items-center
+                justify-center
+                rounded-full
+                bg-[#138808]/10
+              "
+            >
+              <div
+                className="
+                  flex
+                  h-12
+                  w-12
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-[#138808]
+                  text-2xl
+                  font-black
+                  text-white
+                  shadow-[0_8px_20px_rgba(19,136,8,0.20)]
+                "
+              >
                 ✓
               </div>
             </div>
 
             {/* LABEL */}
 
-            <p className="mt-7 text-xs font-bold uppercase tracking-[0.2em] text-[#138808]">
+            <p
+              className="
+                mt-7
+                text-xs
+                font-bold
+                uppercase
+                tracking-[0.2em]
+                text-[#138808]
+              "
+            >
               {isDonation ? "DONATION SUCCESSFUL" : "PAYMENT SUCCESSFUL"}
             </p>
 
             {/* TITLE */}
 
-            <h1 className="mt-3 text-2xl font-black leading-tight text-[#003366] sm:text-3xl">
+            <h1
+              className="
+                mt-3
+                text-2xl
+                font-black
+                leading-tight
+                text-[#171717]
+                sm:text-3xl
+              "
+            >
               {isDonation
                 ? "Thank You for Your Contribution!"
-                : "Your Community Membership Is Activated!"}
+                : "Your Community Contribution Is Complete!"}
             </h1>
 
             {/* DESCRIPTION */}
 
-            <p className="mx-auto mt-4 max-w-md text-sm leading-7 text-slate-600 sm:text-base">
+            <p
+              className="
+                mx-auto
+                mt-4
+                max-w-md
+                text-sm
+                leading-7
+                text-slate-500
+                sm:text-base
+              "
+            >
               {isDonation
                 ? "Your support helps Diishaa Foundation continue its work with communities and create meaningful opportunities."
-                : "Your contribution has been received successfully. Your Community Account and membership credentials can now be generated."}
+                : "Your annual community contribution has been received successfully. Your Community Membership can now be activated."}
             </p>
 
-            {/* AMOUNT */}
+            {/* =================================================
+                AMOUNT
+            ================================================== */}
 
-            <div className="mx-auto mt-7 max-w-sm rounded-2xl bg-[#0B3D91] px-5 py-5">
-              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-blue-200">
+            <div
+              className="
+                mx-auto
+                mt-7
+                max-w-sm
+                rounded-2xl
+                border
+                border-[#E4DDCF]
+                bg-[#FCFBF7]
+                px-5
+                py-5
+              "
+            >
+              <p
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  tracking-[0.16em]
+                  text-slate-400
+                "
+              >
                 Amount Paid
               </p>
 
-              <p className="mt-1 text-3xl font-black text-[#FF9933]">
+              <p
+                className="
+                  mt-1
+                  text-3xl
+                  font-black
+                  text-[#FF9933]
+                "
+              >
                 ₹{new Intl.NumberFormat("en-IN").format(amount)}
               </p>
             </div>
 
-            {/* MEMBERSHIP NEXT STEPS */}
+            {/* =================================================
+                COMMUNITY NEXT STEPS
+            ================================================== */}
 
-            {!isDonation && (
-              <div className="mt-6 rounded-2xl border border-[#FF9933]/20 bg-[#FF9933]/5 p-5 text-left">
-                <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#C66A00]">
-                  What happens next
+            {isCommunityMembership && (
+              <div
+                className="
+                  mt-6
+                  rounded-2xl
+                  border
+                  border-[#FF9933]/20
+                  bg-[#FFF9F2]
+                  p-5
+                  text-left
+                "
+              >
+                <p
+                  className="
+                    text-xs
+                    font-bold
+                    uppercase
+                    tracking-[0.14em]
+                    text-[#C66A00]
+                  "
+                >
+                  What Happens Next
                 </p>
 
                 <div className="mt-4 space-y-3">
@@ -298,32 +534,85 @@ function PaymentSuccess({
               </div>
             )}
 
-            {/* DONATION MESSAGE */}
+            {/* =================================================
+                DONATION MESSAGE
+            ================================================== */}
 
             {isDonation && (
-              <div className="mt-6 rounded-2xl border border-[#138808]/15 bg-[#138808]/5 p-5">
-                <p className="text-sm leading-6 text-slate-600">
+              <div
+                className="
+                  mt-6
+                  rounded-2xl
+                  border
+                  border-[#138808]/15
+                  bg-[#138808]/5
+                  p-5
+                "
+              >
+                <p
+                  className="
+                    text-sm
+                    leading-6
+                    text-slate-500
+                  "
+                >
                   Your contribution is now part of Diishaa Foundation&apos;s
                   ongoing community impact.
                 </p>
               </div>
             )}
 
-            {/* REFERENCE */}
+            {/* =================================================
+                PAYMENT STATUS
+            ================================================== */}
 
             <div className="mt-7">
-              <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400">
+              <p
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  tracking-[0.15em]
+                  text-slate-400
+                "
+              >
                 Payment Status
               </p>
 
-              <p className="mt-1 text-sm font-bold text-[#138808]">
-                Successfully Completed
-              </p>
+              <div className="mt-1 flex items-center justify-center gap-2">
+                <span
+                  className="
+                    flex
+                    h-5
+                    w-5
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-[#138808]
+                    text-white
+                  "
+                >
+                  <Check size={11} strokeWidth={3} />
+                </span>
+
+                <p className="text-sm font-bold text-[#138808]">
+                  Successfully Completed
+                </p>
+              </div>
             </div>
+
+            {/* =================================================
+                REDIRECT MESSAGE
+            ================================================== */}
+
             <div className="mt-6">
               <p className="text-xs text-slate-400">
-                Returning to the donation page in{" "}
-                <span className="font-bold text-[#0B3D91]">{secondsLeft}</span>{" "}
+                Returning to{" "}
+                <span className="font-bold text-[#063B20]">
+                  {isDonation ? "Donation" : "Community Membership"}
+                </span>{" "}
+                in{" "}
+                <span className="font-bold text-[#FF9933]">{secondsLeft}</span>{" "}
                 seconds...
               </p>
             </div>
@@ -341,7 +630,21 @@ function PaymentSuccess({
 function SuccessStep({ number, text }: { number: string; text: string }) {
   return (
     <div className="flex items-center gap-3">
-      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0B3D91] text-[10px] font-bold text-white">
+      <span
+        className="
+          flex
+          h-7
+          w-7
+          shrink-0
+          items-center
+          justify-center
+          rounded-full
+          bg-[#138808]
+          text-[10px]
+          font-bold
+          text-white
+        "
+      >
         {number}
       </span>
 

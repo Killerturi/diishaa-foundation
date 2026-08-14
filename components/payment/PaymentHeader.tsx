@@ -1,8 +1,8 @@
-import {
-  PaymentPurpose,
-  donationPaymentContent,
-  communityPaymentContent,
-} from "./payment.data";
+"use client";
+
+import { Heart, Users } from "lucide-react";
+
+import { PaymentPurpose } from "./payment.data";
 
 interface PaymentHeaderProps {
   purpose: PaymentPurpose;
@@ -11,67 +11,128 @@ interface PaymentHeaderProps {
 export default function PaymentHeader({ purpose }: PaymentHeaderProps) {
   const isDonation = purpose === "donation";
 
-  const content = isDonation ? donationPaymentContent : communityPaymentContent;
-
   return (
-    <div className="text-center">
-      {/* =========================================
-          EYEBROW
-      ========================================== */}
+    <section className="mx-auto max-w-3xl text-center">
+      {/* =====================================================
+          TOP LABEL
+      ====================================================== */}
 
-      <div className="inline-flex items-center gap-2">
-        <span
-          className={`h-1 w-8 rounded-full ${
-            isDonation ? "bg-[#FF9933]" : "bg-[#0B3D91]"
-          }`}
-        />
+      <div className="flex items-center justify-center gap-3">
+        <span className="h-px w-8 bg-[#FF9933] sm:w-10" />
 
         <p
-          className={`text-xs font-bold uppercase tracking-[0.2em] ${
-            isDonation ? "text-[#D97A12]" : "text-[#0B3D91]"
-          }`}
+          className="
+            text-[10px]
+            font-bold
+            uppercase
+            tracking-[0.22em]
+            text-[#D98A18]
+            sm:text-xs
+          "
         >
-          {content.eyebrow}
+          {isDonation ? "MAKE A DIFFERENCE" : "JOIN OUR COMMUNITY"}
         </p>
 
-        <span className="h-1 w-8 rounded-full bg-[#138808]" />
+        <span className="h-px w-8 bg-[#138808] sm:w-10" />
       </div>
 
-      {/* =========================================
-          TITLE
-      ========================================== */}
+      {/* =====================================================
+          ICON
+      ====================================================== */}
 
-      <h1 className="mt-3 text-2xl font-black leading-tight text-[#003366] sm:text-3xl lg:text-4xl">
-        {content.title}
+      <div
+        className="
+          mx-auto
+          mt-4
+          flex
+          h-11
+          w-11
+          items-center
+          justify-center
+          rounded-full
+          bg-[#FF9933]/10
+          text-[#FF9933]
+        "
+      >
+        {isDonation ? (
+          <Heart size={20} strokeWidth={2} />
+        ) : (
+          <Users size={20} strokeWidth={2} />
+        )}
+      </div>
+
+      {/* =====================================================
+          TITLE
+      ====================================================== */}
+
+      <h1
+        className="
+          mt-4
+          text-3xl
+          font-black
+          leading-tight
+          text-[#063B20]
+          sm:text-4xl
+          lg:text-[42px]
+        "
+      >
+        {isDonation ? "Choose Your Donation" : "Complete Your Membership"}
       </h1>
 
-      {/* =========================================
+      {/* =====================================================
           DESCRIPTION
-      ========================================== */}
+      ====================================================== */}
 
-      <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
-        {content.description}
+      <p
+        className="
+          mx-auto
+          mt-4
+          max-w-2xl
+          text-sm
+          leading-6
+          text-slate-500
+          sm:text-base
+          sm:leading-7
+        "
+      >
+        {isDonation ? (
+          <>
+            Select an amount that you would like to contribute. Every
+            contribution helps us serve communities in need.
+          </>
+        ) : (
+          <>
+            Your Community Membership application has been approved. Complete
+            your annual contribution to activate your Dishaa Community
+            Membership.
+          </>
+        )}
       </p>
 
-      {/* =========================================
-          PURPOSE INDICATOR
-      ========================================== */}
+      {/* =====================================================
+          SUPPORTING MESSAGE
+      ====================================================== */}
 
       <div className="mt-5 flex items-center justify-center gap-2">
-        <span
-          className={`h-2 w-2 rounded-full ${
-            isDonation ? "bg-[#FF9933]" : "bg-[#0B3D91]"
-          }`}
-        />
+        <span className="h-1.5 w-1.5 rounded-full bg-[#FF9933]" />
 
-        <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-400">
+        <p
+          className="
+            text-[9px]
+            font-bold
+            uppercase
+            tracking-[0.18em]
+            text-slate-400
+            sm:text-[10px]
+          "
+        >
           {isDonation
-            ? "Every contribution creates impact"
-            : "Complete your community membership"}
-        </span>
+            ? "EVERY CONTRIBUTION CREATES IMPACT"
+            : "COMMUNITY · SUPPORT · IMPACT"}
+        </p>
 
-        <span className="h-2 w-2 rounded-full bg-[#138808]" />
+        <span className="h-1.5 w-1.5 rounded-full bg-[#138808]" />
       </div>
-    </div>
+    </section>
   );
 }

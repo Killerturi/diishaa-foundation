@@ -32,11 +32,6 @@ export default function JoinUsPage() {
           FINAL CTA
       ========================================== */}
       <CommunityCTA />
-
-      {/* =========================================
-          APPLICATION FORM
-      ========================================== */}
-      <CommunityApplication />
     </main>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { communityHero } from "./community.data";
 
 export default function CommunityHero() {
@@ -83,9 +84,8 @@ export default function CommunityHero() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             {/* PRIMARY CTA */}
-            <button
-              type="button"
-              onClick={handleJoinNow}
+            <Link
+              href="/join-us/apply"
               className="
                 inline-flex
                 min-h-12
@@ -110,7 +110,7 @@ export default function CommunityHero() {
               {communityHero.primaryCta}
 
               <span className="ml-2 text-base">→</span>
-            </button>
+            </Link>
 
             {/* SECONDARY CTA */}
             <button
